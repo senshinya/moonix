@@ -1,23 +1,19 @@
 #include "types.h"
 #include "sbi.h"
 
-void consolePutchar(usize c)
-{
+void consolePutchar(usize c) {
     SBI_ECALL_1(SBI_CONSOLE_PUTCHAR, c);
 }
 
-usize consoleGetchar()
-{
+usize consoleGetchar() {
     return SBI_ECALL_0(SBI_CONSOLE_GETCHAR);
 }
 
-void shutdown()
-{
+void shutdown() {
     SBI_ECALL_0(SBI_SHUTDOWN);
     while(1) {}
 }
 
-void setTimer(usize time)
-{
+void setTimer(usize time) {
     SBI_ECALL_1(SBI_SET_TIMER, time);
 }

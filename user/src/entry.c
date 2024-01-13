@@ -2,8 +2,7 @@
 #include "syscall.h"
 #include "ulib.h"
 
-__attribute__((weak)) uint32 main()
-{
+__attribute__((weak)) uint32 main() {
     panic("No main linked!\n");
     return 1;
 }

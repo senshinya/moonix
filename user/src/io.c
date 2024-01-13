@@ -5,21 +5,17 @@
 
 static char digits[] = "0123456789abcdef";
 
-uint8 getc()
-{
+uint8 getc() {
     uint8 c;
     sys_read(0, &c, 1);
     return c;
 }
 
-void putchar(int c)
-{
+void putchar(int c) {
     sys_write(c);
 }
 
-static void
-printint(int xx, int base, int sign)
-{
+static void printint(int xx, int base, int sign) {
     char buf[16];
     int i;
     uint x;
@@ -42,9 +38,7 @@ printint(int xx, int base, int sign)
         putchar(buf[i]);
 }
 
-static void
-printptr(uint64 x)
-{
+static void printptr(uint64 x) {
     int i;
     putchar('0');
     putchar('x');
@@ -52,8 +46,7 @@ printptr(uint64 x)
         putchar(digits[x >> (sizeof(uint64) * 8 - 4)]);
 }
 
-void printf(char *fmt, ...)
-{
+void printf(char *fmt, ...) {
     va_list ap;
     int i, c;
     char *s;
@@ -100,8 +93,7 @@ void printf(char *fmt, ...)
     }
 }
 
-void panic(char *s)
-{
+void panic(char *s) {
     printf("panic: ");
     printf(s);
     printf("\n");
