@@ -35,7 +35,7 @@ typedef enum {
 #define sys_open(__a0) sys_call(Open, __a0, 0, 0, 0)
 #define sys_close(__a0) sys_call(Close, __a0, 0, 0, 0)
 #define sys_read(__a0, __a1, __a2) sys_call(Read, __a0, __a1, __a2, 0)
-#define sys_write(__a0) sys_call(Write, __a0, 0, 0, 0)
+#define sys_write(__a0, __a1) sys_call(Write, __a0, __a1, 0, 0)
 #define sys_exit(__a0) sys_call(Exit, __a0, 0, 0, 0)
 #define sys_exec(__a0, __a1) sys_call(Exec, __a0, __a1, 0, 0)
 

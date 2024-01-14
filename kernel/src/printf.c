@@ -65,15 +65,15 @@ void printf(char *fmt, ...) {
             case 's':
                 if ((s = va_arg(ap, char *)) == 0)
                     s = "(null)";
-            for (; *s; s++)
-                consolePutchar(*s);
+                for (; *s; s++)
+                    consolePutchar(*s);
             break;
             case '%':
                 consolePutchar('%');
             break;
             default:
                 consolePutchar('%');
-            consolePutchar(c);
+                consolePutchar(c);
             break;
         }
     }

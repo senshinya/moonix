@@ -13,4 +13,14 @@ void setTimer(usize time);
 void printf(char *, ...);
 void panic(char*) __attribute__((noreturn));
 
+/* trap.c */
+void initTrap();
+
+/* batch.c */
+void initBatch();
+void runNextApp();
+
+/* syscall.c */
+usize syscall(usize syscallID, usize args[3]);
+
 #endif

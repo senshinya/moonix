@@ -11,6 +11,7 @@ void clearBSS() {
 
 int main() {
     clearBSS();
-    printf("Hello, moonix!\n");
-    panic("Shutdown machine!");
+    initTrap();
+    initBatch();
+    runNextApp();
 }

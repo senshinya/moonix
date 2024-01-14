@@ -11,8 +11,10 @@ uint8 getc() {
     return c;
 }
 
+const usize STDOUT = 1;
+
 void putchar(int c) {
-    sys_write(c);
+    sys_write(STDOUT, c);
 }
 
 static void printint(int xx, int base, int sign) {
