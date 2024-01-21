@@ -56,7 +56,6 @@ void runNextApp() {
     moveToNextApp();
 
     extern void __restore(usize sp);
-    TrapContext ctx;
 
     __restore((usize)pushContextIntoKernelStack(newAppInitContext(APP_BASE_ADDRESS, getUserStackSp())));
 }

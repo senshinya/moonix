@@ -11,6 +11,8 @@ typedef enum {
     Read = 63,
     Write = 64,
     Exit = 93,
+    Yield = 124,
+    GetTime = 169,
     Exec = 221,
 } SyscallId;
 
@@ -37,6 +39,8 @@ typedef enum {
 #define sys_read(__a0, __a1, __a2) sys_call(Read, __a0, __a1, __a2, 0)
 #define sys_write(__a0, __a1) sys_call(Write, __a0, __a1, 0, 0)
 #define sys_exit(__a0) sys_call(Exit, __a0, 0, 0, 0)
+#define sys_yield() sys_call(Yield, 0, 0, 0, 0)
+#define sys_gettime() sys_call(GetTime, 0, 0, 0, 0)
 #define sys_exec(__a0, __a1) sys_call(Exec, __a0, __a1, 0, 0)
 
 #endif
